@@ -1,0 +1,189 @@
+/// These are the actual col's you draw
+.sl-container {
+  width: 915px;
+  overflow: hidden;
+  position: relative;
+  min-height: 3000px;
+  height: 100%;
+  margin: 0 auto;
+  &.xs {
+    .sl-row {
+      background: fadeout(@xs-color, @morefaded);
+      &.active {
+        background: fadeout(@xs-color, @lessfaded);
+      }
+    }
+    .col {
+      .width {
+        background-color: @xs-color;
+        .col-name {
+          left: 7px;
+        }
+        .classes {
+          left: 7px;
+        }
+      }
+    }
+    .offset-handle {
+      display: none;
+    }
+  }
+  &.sm {
+    .sl-row {
+      background: fadeout(@sm-color, @morefaded);
+      &.active {
+        background: fadeout(@sm-color, @lessfaded);
+      }
+    }
+    .col {
+      .width {
+        background-color: @sm-color;
+      }
+    }
+  }
+  &.md {
+    .sl-row {
+      background: fadeout(@md-color, @morefaded);
+      &.active {
+        background: fadeout(@md-color, @lessfaded);
+      }
+    }
+    .col {
+      .width {
+        background-color:  @md-color;
+      }
+    }
+  }
+  &.lg {
+    .sl-row {
+      background: fadeout(@lg-color, @morefaded);
+      &.active {
+        background: fadeout(@lg-color, @lessfaded);
+      }
+    }
+    .col {
+      .width {
+        background-color: @lg-color;
+      }
+    }
+  }
+  .col {
+    height: 150px;
+    background: #ccc;
+    font-weight: @semibold;
+    float: left;
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    background: transparent;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+    }
+    .remove {
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 5px;
+      font-size: 12px;
+      color: hsla(0, 0%, 100%, .5);
+      cursor: pointer;
+      &:hover {
+        color: hsla(0, 0%, 100%, 1.0);
+      }
+    }
+    .width {
+      width: 60px;
+      min-width: 60px;
+      height: 100%;
+      display: inline-block;
+      position: relative;
+      float: left;
+      overflow: hidden;
+      cursor: col-resize !important;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      .border-radius(3px);
+      &:active {
+        cursor: col-resize;
+      }
+      .offset-handle {
+        position: absolute;
+        @distance: 5px;
+        left: 4px;
+        top: @distance;
+        bottom: @distance;
+        background-color: rgba(0, 0, 0, 0.13);
+        width: 8px;
+        .border-radius(3px);
+        cursor: -webkit-grab !important;
+        cursor: -moz-grab !important;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .col-name {
+        position: absolute;
+        left: 15px;
+        top: 0;
+        font-size: 10pt;
+        font-weight: @semibold;
+        padding: 0;
+        border: 0;
+        color: white;
+        padding-left: 2px;
+        background: transparent;
+      }
+      .classes {
+        position: absolute;
+        bottom: 3px;
+        left: 19px;
+        font-size: 10pt;
+        color: white;
+        line-height: 1em;
+      }
+      .nested {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        line-height: 1em;
+        font-size: 13pt;
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  .offset {
+    height: 100%;
+    display: inline-block;
+    float: left;
+    background-color: hsla(0, 0%, 0%, .1);
+  }
+  .new-col {
+    display: none;
+    float: left;
+    margin-bottom: 10px;
+    width: 50px;
+    cursor: pointer;
+    margin-left: 5px;
+    height: 150px;
+    border: 1px dashed hsla(0, 0%, 100%, .5);
+    background: transparent;
+    &.no-cols {
+      margin-left: 5px;
+    }
+    &:first-child {
+      margin-left: 4px;
+    }
+  }
+}

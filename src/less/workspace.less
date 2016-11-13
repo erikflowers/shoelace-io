@@ -1,0 +1,32 @@
+.workspace {
+  position: absolute;
+  top: 0px;
+  bottom: @footer-height;
+  right: @html-width;
+  left: 176px;
+  overflow-y: scroll;
+  background-color: hsl(0, 0%, 10%);
+  &.medias-collapsed {
+    left: 50px;
+  }
+  &.output-collapsed {
+    right: 0px;
+  }
+  .columns {
+      height: 100%;
+      position: absolute;
+      left: 15px;
+      top: 0;
+    .col {
+      width: 60px;
+      height: 100%;
+      background-color: hsl(0, 0%, 12%);
+    }
+  }
+}
+
+.row .col {
+  width: auto;
+  cursor: pointer;
+  background: transparent;
+}
